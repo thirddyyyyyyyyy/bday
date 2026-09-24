@@ -525,6 +525,7 @@
       font-size: 0.82rem;
     }
   }
+@media (min-width: 801px) { .photos { grid-template-columns: repeat(3, minmax(0, 1fr)); } .photo-card:nth-child(4) { grid-column: 2; } }
 
   /* =========================
      SMALL PHONES
@@ -625,6 +626,163 @@
     }
   }
 </style>
+<style>
+/* iPhone 13 / modern phone optimization */
+@media screen and (min-width: 375px) and (max-width: 430px) {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  .hero {
+    min-height: 100svh;
+    padding:
+      max(2.5rem, env(safe-area-inset-top))
+      1rem
+      max(2.5rem, env(safe-area-inset-bottom));
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 360px;
+    margin-inline: auto;
+  }
+
+  .eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+  }
+
+  h1 {
+    font-size: clamp(2.45rem, 12vw, 3.15rem);
+    line-height: 1.05;
+    margin: 0.75rem 0 1rem;
+  }
+
+  .hero p {
+    max-width: 340px;
+    font-size: 0.98rem;
+    line-height: 1.55;
+    margin: 1rem auto 1.5rem;
+  }
+
+  .button {
+    min-height: 44px;
+    padding: 0.8rem 1.15rem;
+    font-size: 0.88rem;
+  }
+
+  section {
+    padding: 3.25rem 0.9rem;
+  }
+
+  .section-inner {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .section-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(1.85rem, 9vw, 2.5rem);
+  }
+
+  .section-heading p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    max-width: 340px;
+  }
+
+  .photos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    align-items: start;
+  }
+
+  .photo-card {
+    width: 100%;
+    padding: 0.4rem 0.4rem 0.7rem;
+    border-radius: 13px;
+  }
+
+  .photo-card img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 9px;
+  }
+
+  .photo-card p {
+    font-size: 0.78rem;
+    line-height: 1.35;
+    margin: 0.55rem 0.1rem 0;
+  }
+
+  .note {
+    font-size: 0.75rem;
+    line-height: 1.45;
+    padding-inline: 0.5rem;
+  }
+
+  .letter-section {
+    background-position: center center;
+    background-attachment: scroll;
+  }
+
+  .letter {
+    width: 100%;
+    max-width: 360px;
+    padding: 1.35rem 1.05rem;
+    border-radius: 17px;
+  }
+
+  .letter h3 {
+    font-size: 1.45rem;
+    line-height: 1.2;
+  }
+
+  .letter p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .signature {
+    font-size: 1.1rem !important;
+  }
+
+  #surpriseMessage {
+    max-width: 360px;
+    padding: 1.05rem;
+    font-size: 0.96rem;
+    line-height: 1.6;
+  }
+
+  footer {
+    padding:
+      1.8rem
+      1rem
+      max(1.8rem, env(safe-area-inset-bottom));
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+}
+
+img, video, iframe, canvas, svg {
+  max-width: 100%;
+}
+
+p, h1, h2, h3, a, button {
+  overflow-wrap: anywhere;
+}
+</style>
 
   </head>
   <body>
@@ -633,7 +791,7 @@
         <div class="eyebrow">────────────────────୨ৎ────────────────────</div>
         <h1>Happy 21st Birthday,<span>My Love ♡</span></h1>
         <p>
-          To the girl who makes my world brighter today is all about celebrating
+          To the girl who makes my world brighter, today is all about celebrating
           you, your beautiful heart, and every little thing that makes you
           special.
         </p>
@@ -642,41 +800,51 @@
     </header>
 
     <main>
-      <section class="gallery" id="memories">
-        <div class="section-inner">
-          <div class="section-heading">
-            <div class="eyebrow">Little moments, big love</div>
-            <h2>Our memories ♡</h2>
-            <p>
-              Some of my favorite moments are the ones I get to share with you.
-            </p>
-          </div>
-          <div class="photos">
-            <article class="photo-card" style="--tilt: -1.5deg">
-              <img
-                src="Pictures/1st.1.JPEG"
-              />
-              <p>My favorite place is beside you.</p>
-            </article>
-            <article class="photo-card" style="--tilt: 1.2deg">
-              <img
-                src="Pictures/2nd.JPEG"
-              />
-              <p>Every laugh with you is a treasure.</p>
-            </article>
-            <article class="photo-card" style="--tilt: -0.8deg">
-              <img
-                src="Pictures/3rd1.JPEG"
-                alt="Romantic celebration"
-              />
-              <p>Here's to more beautiful days together.</p>
-            </article>
-          </div>
-          <p class="note">
+     
+  <section class="gallery" id="memories">
+  <div class="section-inner">
+    <div class="section-heading">
+      <div class="eyebrow">Little moments, big love</div>
+      <h2>Our memories ♡</h2>
+      <p>
+        Some of my favorite moments are the ones I get to share with you.
+      </p>
+    </div>
 
-          </p>
-        </div>
-      </section>
+    <div class="photos">
+      <article class="photo-card" style="--tilt: -1.5deg">
+        <img
+          src="Pictures/1st.1.JPEG"
+        />
+        <p>My favorite place is beside you.</p>
+      </article>
+
+      <article class="photo-card" style="--tilt: 1.2deg">
+        <img
+          src="Pictures/2nd.JPEG"
+        />
+        <p>Every laugh with you is a treasure.</p>
+      </article>
+
+      <article class="photo-card" style="--tilt: -0.8deg">
+        <img
+          src="Pictures/3rd1.JPEG"
+        />
+        <p>Here's to more beautiful days together.</p>
+      </article>
+
+      <article class="photo-card" style="--tilt: 1deg">
+        <img
+          src="Pictures/4th.JPEG"
+        />
+        <p>More memories, more moments, more us.</p>
+      </article>
+    </div>
+
+    <p class="note"></p>
+  </div>
+</section>
+
 
       <section class="letter-section" id="letter">
         <div class="section-inner">
@@ -731,8 +899,7 @@
             it would be to keep making you smile for the rest of our lives.
             21 years of you, and I'm so lucky to be part of your story.
             Here's to all the birthdays we'll celebrate together.
-            May your 21st year be full of adventures, happy surprises, and
-            dreams coming true. And may I get to keep cheering for you, holding
+            And may I get to keep cheering for you, holding
             your hand, and loving you through it all. Happy birthday, my love!
           </div>
         </div>
